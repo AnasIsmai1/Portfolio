@@ -1,5 +1,5 @@
 .contact {
-  padding-block-start: 8rem;
+  padding-block-start: 10rem;
   display: flex;
   flex-direction: column;
 
@@ -66,6 +66,53 @@
         border-radius: 0%;
       }
 
+    }
+  }
+}
+
+@media (width < 1200px) {
+  .contact {
+    h2 {
+      font-size: 4rem;
+    }
+
+    h3 {
+      margin: 0;
+      margin-bottom: .5rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      padding: .5em 1.25em;
+    }
+  }
+}
+
+@media (width < 700px) {
+
+  .contact {
+    padding-block-start: 6rem;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (width < 400px) {
+  .contact {
+    h3 {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    button {
+      font-size: 1.125rem;
+      padding: .5em 1.25em;
     }
   }
 }

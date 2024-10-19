@@ -31,9 +31,9 @@ export class SocialsComponent {
       isHover: false
     },
     {
-      title: "facebook",
-      alternateTitle: "f4cebo0k",
-      link: "https://www.facebook.com/profile.php?id=100042464077116",
+      title: "github",
+      alternateTitle: "g1thub",
+      link: "https://www.github.com/AnasIsmai1",
       isHover: false
     }
   ]

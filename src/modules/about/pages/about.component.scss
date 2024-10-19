@@ -204,9 +204,7 @@ h2 {
     z-index: 2;
     display: flex;
 
-
-
-    &:not(:nth-child(2)) {
+    &:not(:nth-child(3)) {
       h3 {
         transform-origin: right;
       }
@@ -265,11 +263,11 @@ h2 {
 
 }
 
-.hobbies {
+.partition {
   position: relative;
   z-index: 10;
   padding-block: 4rem;
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 30% 70%;
 
@@ -336,6 +334,26 @@ h2 {
   }
 }
 
+@keyframes slideLeftMini {
+  from {
+    left: max(calc(200px * 10), 100%);
+  }
+
+  to {
+    left: -200px;
+  }
+}
+
+@keyframes slideLeftLast {
+  from {
+    left: max(calc(150px * 10), 100%);
+  }
+
+  to {
+    left: -150px;
+  }
+}
+
 @keyframes fade {
   from {
     scale: .8;
@@ -354,4 +372,194 @@ h2 {
 
 .active-rev {
   animation: popup-rev .8s ease;
+}
+
+@media (width < 1500px) {
+  .container {
+    .intro {
+      padding-top: 0;
+    }
+
+    .services {
+      div {
+        img {
+          width: 150px;
+          height: 110px
+        }
+      }
+
+      h3 {
+        font-size: 6rem;
+      }
+    }
+  }
+}
+
+@media (width < 1200px) {
+
+  .container {
+
+    .services {
+      div {
+        align-items: center;
+
+        img {
+          width: 125px;
+          height: 90px;
+        }
+
+        &:nth-child(3) {
+          transform: none;
+        }
+      }
+
+      h3 {
+        line-height: 90px;
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .partition {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .scroll {
+    height: 200px;
+
+    img {
+      width: 200px;
+      animation: slideLeftMini 40s calc((40 / 10) * (10 - var(--pos)) * -1s) linear infinite;
+    }
+  }
+
+  .active,
+  .active-rev {
+    animation: none;
+  }
+}
+
+@media (width < 900px) {
+
+  .container {
+    h1 {
+      line-height: 80px;
+
+      div {
+        color: #fff;
+        font-size: 7rem;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &:last-child {
+      padding-block-start: 4rem;
+    }
+
+    padding-block-end: 4rem;
+  }
+
+  .intro {
+
+    div,
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .services {
+    display: flex;
+    align-items: center;
+
+    div {
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (width < 700px) {
+  .container {
+    .intro {
+      div {
+        margin: 0;
+        margin-top: 3rem;
+
+        .pic {
+          display: none;
+        }
+
+        .time {
+          margin-left: 0;
+          padding: 0;
+          background-image: none;
+        }
+      }
+    }
+
+    .services {
+      padding-block: 2rem;
+
+      h3 {
+        font-size: 3.5rem;
+        line-height: 60px;
+      }
+    }
+
+    .partition {
+      .right {
+        margin-top: 1rem;
+
+        .line {
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+  }
+
+  .scroll {
+    img {
+      width: 150px;
+      animation: slideLeftLast 40s calc((40 / 10) * (10 - var(--pos)) * -1s) linear infinite;
+    }
+  }
+}
+
+@media (width < 500px) {
+  .container {
+    .intro {
+
+      div,
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .services {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 2.75rem;
+        line-height: 50px;
+      }
+    }
+
+    .partition {
+      h3 {
+        font-size: 3rem;
+      }
+    }
+  }
 }
