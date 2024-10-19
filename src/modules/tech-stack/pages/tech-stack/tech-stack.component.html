@@ -1,0 +1,23 @@
+<div class="wrapper container">
+  <h2>Tools i use everyday</h2>
+  <h1>Tech<br>Stack</h1>
+</div>
+<div class="tools">
+
+  @for(item of stack;track item; let i = $index){
+  <a href="{{item.link}}" target="__blank" class="box" class="box-{{i+1}}">
+    <div class="arrow" href=""><i class="fa-solid fa-arrow-up"></i></div>
+    <button>{{item.badge}}</button>
+    <i class="{{item.class}}"></i>
+    <h3>{{item.title}}</h3>
+    <video src="./abstract.mp4" autoplay="true" loop="true"></video>
+  </a>
+  }
+  <a class="box box-8" href="https://neovim.io/" target="__blank">
+    <div class="arrow"><i class="fa-solid fa-arrow-up"></i></div>
+    <button>Editor</button>
+    <p></p>
+    <h3>Neovim</h3>
+    <video src="./abstract.mp4" autoplay="true" loop="true"></video>
+  </a>
+</div>

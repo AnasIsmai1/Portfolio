@@ -1,0 +1,11 @@
+.container {
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+}
+
+app-header {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+}

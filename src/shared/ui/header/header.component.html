@@ -1,0 +1,23 @@
+<header class="container">
+  <div class="logo">
+    <span style="transform: translateY(2.5px)"><span class="star">✦</span></span>
+    <a routerLink="/" class="name" (mouseover)="onLogoHover()" (mouseleave)="onLogoLeave()">
+      <h3 *ngIf="logoShow">FU7UR3</h3>
+      <h3 *ngIf="!logoShow">FUTURE</h3>
+    </a>
+  </div>
+  <nav (mouseover)="onMenuHover()" (mouseleave)="onMenuLeave()">
+    <div *ngIf="isClicked">
+      <a class="menu" *ngIf="menuShow" (click)="onClick()">M3nu</a>
+      <a class="menu" *ngIf="!menuShow">Menu</a>
+    </div>
+    <div *ngIf="!isClicked">
+      [
+      <a class="menu" *ngIf="menuShow" (click)="onClick()">cl0s3</a>
+      <a class="menu" *ngIf="!menuShow">close</a>
+      ]
+    </div>
+  </nav>
+</header>
+
+

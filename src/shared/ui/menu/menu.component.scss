@@ -1,0 +1,150 @@
+nav {
+  float: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 100dvh;
+  text-align: center;
+
+  ul {
+    position: absolute;
+    width: 120vw;
+    top: 50%;
+    transform: translate(-10vw, -50%);
+  }
+
+  li {
+    position: relative;
+    z-index: 3;
+    list-style-type: none;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 8rem;
+
+    .line {
+      visibility: hidden;
+      inset: 0;
+      top: 50%;
+      position: absolute;
+      z-index: 2;
+      transform: translate(-5vw, -50%);
+    }
+
+    p {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-family: "Roboto Mono", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 40px;
+      animation: moveLeft 15s linear calc((15s / 8) * (var(--position) - 1) * -1) infinite;
+    }
+
+    a {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      line-height: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 50%;
+        height: 50%;
+        translate: 0 25%;
+        background-color: rgba(#000, 0.8);
+        border: solid black 1px;
+        inset: 0;
+        backdrop-filter: blur(10px);
+      }
+    }
+
+    &:hover {
+      z-index: 1;
+
+      a {
+        color: #eee;
+      }
+
+      .line {
+        pointer-events: none;
+        visibility: visible;
+      }
+
+      a::after {
+        pointer-events: none;
+        z-index: 2;
+        height: 150%;
+        width: 150%;
+        translate: -25% -25%;
+      }
+    }
+  }
+}
+
+.socials {
+  position: absolute;
+  z-index: 10;
+  bottom: 2.5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.overlay {
+  overflow: hidden;
+  position: absolute;
+  z-index: 5;
+  inset: -200%;
+  opacity: 0.15;
+  pointer-events: none;
+  background-image: url('../../../../public/white_noise.jpeg');
+  animation: shift 0.2s linear infinite both;
+}
+
+@keyframes shift {
+  from {
+    transform: translate(10%, 20%);
+  }
+
+  to {
+    transform: translate(-20%, -10%);
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    right: -100px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@media (width < 800px) {
+  a {
+    font-size: 6rem;
+    line-height: 80px !important;
+  }
+}
+
+@media (width < 500px) {
+  nav {
+    li {
+      a {
+        font-size: 4rem;
+        line-height: 60px !important;
+      }
+    }
+  }
+
+  app-socials {
+    display: none;
+  }
+}

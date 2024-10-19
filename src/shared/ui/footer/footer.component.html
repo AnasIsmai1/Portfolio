@@ -1,0 +1,8 @@
+<footer class="container">
+  <p>Built <strong>by Anas</strong></p>
+  <app-socials></app-socials>
+  <div class="top" (mouseover)="onHover()" (mouseleave)="onLeave()">
+    <a *ngIf="!topShow">Back to top</a>
+    <a *ngIf="topShow" (click)="goToTop()" >B4ck to t0p</a>
+  </div>
+</footer>

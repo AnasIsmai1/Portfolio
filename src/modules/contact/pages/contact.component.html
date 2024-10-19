@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="left">
+    <h2>Contact</h2>
+    <p>I'm currently available for freelance projects. Email me for inquiries.</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+      *ngIf="!isSubmitted">
+      <h3>Inquiry Form</h3>
+      <div class="top-input">
+        <input [ngClass]="{'invalid': registerForm.get('name')?.invalid && attempt}" type="text" placeholder="Name" formControlName="name">
+        <input [ngClass]="{'invalid': registerForm.get('email')?.invalid && attempt}" type="email" placeholder="Email" formControlName="email">
+        <div class="error"
+          *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty ) && attempt">
+          Email should be valid</div>
+      </div>
+      <textarea [ngClass]="{'invalid': registerForm.get('message')?.invalid && attempt}" rows="11" placeholder="Message" formControlName="message"></textarea>
+      <button>Send Email</button>
+    </form>
+
+    <div *ngIf="isSubmitted" class="submitted">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+
+  </div>
+  <div class="right">
+    <div class="box"></div>
+  </div>
+</div>
+<div class="time">
+  <h3>Local Time</h3>
+  <h4>[ Rahimyar Khan, PJ ]</h4>
+  <h2>{{currentTime}}</h2>
+</div>
