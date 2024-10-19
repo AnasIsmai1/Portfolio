@@ -313,6 +313,14 @@
 
     .works {
       .box {
+        .details {
+          .links {
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+
         border-radius: 1rem;
       }
     }
