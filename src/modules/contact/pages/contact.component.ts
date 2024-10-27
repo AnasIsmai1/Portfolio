@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from "@emailjs/browser"
+import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
 
-  currentTime: string = '';
+  intervalId: any;
   registerForm: FormGroup;
   isSubmitted: boolean = false;
   attempt: boolean = false;
   localTime!: Date;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, @Inject(PLATFORM_ID) private platformId: object) {
 
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
@@ -25,12 +27,21 @@ export class ContactComponent implements OnInit {
   }
 
   getTime() {
-    this.localTime = new Date();
-    const hours = this.localTime.getHours() % 12 || 12;
-    const minutes = this.localTime.getMinutes().toString().padStart(2, '0');
-    const seconds = this.localTime.getSeconds().toString().padStart(2, '0');
-    const timeOfDay = this.localTime.getHours() < 12 ? 'AM' : 'PM';
-    this.currentTime = `${hours}:${minutes}:${seconds} ${timeOfDay}`;
+    this.intervalId = setInterval(() => {
+      this.localTime = new Date();
+    }, 1000)
+  }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.getTime();
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
   async send() {
@@ -38,7 +49,6 @@ export class ContactComponent implements OnInit {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const response = await emailjs.send("service_wncrkij", "template_bewhtop", {
       from_name: this.registerForm.value.name,
-      to_name: "Anas Ismail",
       from_email: this.registerForm.value.email,
       subject: "Contact from Portfolio",
       message: this.registerForm.value.message,
@@ -54,8 +64,4 @@ export class ContactComponent implements OnInit {
     }
   }
 
-
-  ngOnInit(): void {
-    this.getTime()
-  }
 }

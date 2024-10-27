@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from '../shared/ui/header/header.component';
 import { FooterComponent } from '../shared/ui/footer/footer.component';
 import { MenuComponent } from '../shared/ui/menu/menu.component';
+import { ContactModule } from '../modules/contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MenuComponent } from '../shared/ui/menu/menu.component';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
+    ContactModule
   ],
   providers: [
     provideClientHydration()
