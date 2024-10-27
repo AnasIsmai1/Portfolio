@@ -5,14 +5,12 @@
   h2 {
     font-size: 1.25rem;
     font-weight: 400;
-    text-transform: uppercase;
     color: #aaa;
   }
 
   h1 {
     margin-block-start: 2rem;
     font-family: "Inter Tight", sans-serif;
-    text-transform: uppercase;
     font-size: 10rem;
     font-weight: 800;
     line-height: 130px;
@@ -74,12 +72,10 @@
     h3 {
       position: relative;
       z-index: 8;
-      text-transform: capitalize;
       font-weight: 500;
     }
 
     .arrow {
-      position: relative;
       z-index: 8;
       text-decoration: none;
       display: grid;
@@ -89,7 +85,6 @@
       width: 1.75rem;
       height: 1.75rem;
       border-radius: 50%;
-      top: -2rem;
       right: -5rem;
       transform: rotate(45deg);
       transition: .3s ease;
@@ -119,7 +114,6 @@
     button {
       position: relative;
       z-index: 8;
-      border: none;
       border-radius: 1rem;
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -140,54 +134,26 @@
     grid-column: 4 / span 3;
   }
 
-  .box-3 {
+  .box:nth-child(3n + 3) {
     grid-column: 1 / span 2;
   }
 
-  .box-4 {
+  .box:nth-child(3n + 4) {
     grid-column: 3 / span 2;
   }
 
-  .box-5 {
-    grid-column: 5 / span 2;
-  }
-
-  .box-6 {
-    grid-column: 1 / span 2;
-  }
-
-  .box-7 {
-    grid-column: 3 / span 2;
-  }
-
-  .box-8 {
+  .box:nth-child(3n + 5) {
     grid-column: 5 / span 2;
   }
 }
 
 @media (width < 1200px) {
   .tools {
-    .box-3 {
+    .box:nth-child(odd) {
       grid-column: 1 / span 3;
     }
 
-    .box-4 {
-      grid-column: 4 / span 3;
-    }
-
-    .box-5 {
-      grid-column: 1 / span 3;
-    }
-
-    .box-6 {
-      grid-column: 4 / span 3;
-    }
-
-    .box-7 {
-      grid-column: 1 / span 3;
-    }
-
-    .box-8 {
+    .box:nth-child(even) {
       grid-column: 4 / span 3;
     }
   }

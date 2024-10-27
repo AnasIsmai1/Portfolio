@@ -12,11 +12,23 @@ html {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
 input,
 textarea,
 button {
   display: block;
   font: inherit;
+}
+
+button {
+  border: none;
 }
 
 img,
@@ -41,4 +53,30 @@ i {
   width: 95%;
   margin: auto;
   overflow: hidden;
+}
+
+.dark {
+  $dark-100: #000;
+}
+
+.light {
+  $light-100: #fff;
+}
+
+@keyframes shift {
+  from {
+    transform: translate(10%, 20%);
+  }
+
+  to {
+    transform: translate(-20%, -10%);
+  }
+}
+
+
+
+@media (width < 800px) {
+  .container {
+    width: 90%;
+  }
 }

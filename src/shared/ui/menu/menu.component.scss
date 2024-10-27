@@ -107,23 +107,13 @@ nav {
   animation: shift 0.2s linear infinite both;
 }
 
-@keyframes shift {
-  from {
-    transform: translate(10%, 20%);
-  }
-
-  to {
-    transform: translate(-20%, -10%);
-  }
-}
-
 @keyframes moveLeft {
   from {
     right: -100px;
   }
 
   to {
-    right: 100%;
+    right: max(calc(8 * 100px), 100%);
   }
 }
 
@@ -133,9 +123,40 @@ nav {
     line-height: 80px !important;
   }
 
-  p {
-    animation: none;
+  nav {
+    ul {
+      li {
+
+        a {
+          transition: .2s ease;
+
+          &::after {
+            display: none;
+          }
+        }
+
+
+        &:hover {
+          a {
+            text-shadow: 0 0 10px rgba(#fff, 0.3);
+            scale: 1.05;
+          }
+        }
+
+        .line {
+          display: none;
+
+          p {
+            animation: none;
+          }
+        }
+      }
+    }
   }
+
+
+
+
 }
 
 @media (width < 500px) {

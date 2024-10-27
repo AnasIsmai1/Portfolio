@@ -135,12 +135,21 @@ h2 {
 
   img {
     position: absolute;
+    z-index: 2;
     top: 0%;
     border-radius: 2rem;
     object-fit: cover;
     width: 250px;
     aspect-ratio: 1;
     animation: slideLeft 40s calc((40 / 10) * (10 - var(--pos)) * -1s) linear infinite;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background-image: url('../../../../public/white_noise.jpeg');
+    }
   }
 }
 

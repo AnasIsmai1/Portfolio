@@ -34,10 +34,10 @@ export class TechStackComponent {
       link: "https://www.figma.com/"
     },
     {
-      badge: "OS",
-      title: "linux",
-      class: "fa-brands fa-linux",
-      link: "https://ubuntu.com/"
+      badge: "Preprocessor",
+      title: "SCSS",
+      class: "fa-brands fa-sass",
+      link: "https://www.sass-lang.com/"
     },
     {
       badge: "File Storage",
