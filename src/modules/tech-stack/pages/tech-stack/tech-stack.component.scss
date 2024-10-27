@@ -172,12 +172,13 @@
       line-height: 70px;
     }
 
-    .tools {
-      grid-template-columns: 1fr;
+  }
 
-      .box {
-        grid-column: 1;
-      }
+  .tools {
+    grid-template-columns: 1fr;
+
+    .box {
+      grid-column: 1 !important;
     }
   }
 
