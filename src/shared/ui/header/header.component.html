@@ -6,14 +6,14 @@
       <h3 *ngIf="!logoShow">FUTURE</h3>
     </a>
   </div>
-  <nav (mouseover)="onMenuHover()" (mouseleave)="onMenuLeave()">
+  <nav (mouseover)="onMenuHover()" (mouseleave)="onMenuLeave()" (click)="onClick()">
     <div *ngIf="isClicked">
-      <a class="menu" *ngIf="menuShow" (click)="onClick()">M3nu</a>
+      <a class="menu" *ngIf="menuShow" >M3nu</a>
       <a class="menu" *ngIf="!menuShow">Menu</a>
     </div>
     <div *ngIf="!isClicked">
       [
-      <a class="menu" *ngIf="menuShow" (click)="onClick()">cl0s3</a>
+      <a class="menu" *ngIf="menuShow">cl0s3</a>
       <a class="menu" *ngIf="!menuShow">close</a>
       ]
     </div>

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuServiceService } from '../../../services/menu-service/menu-service.service';
@@ -32,11 +32,15 @@ export class HeaderComponent {
   }
 
   onMenuHover() {
-    this.menuShow = true;
+    if (screen.availWidth > 800) {
+      this.menuShow = true;
+    }
   }
 
   onMenuLeave() {
-    this.menuShow = false;
+    if (screen.availWidth > 800) {
+      this.menuShow = false;
+    }
   }
 
   onClick() {
