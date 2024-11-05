@@ -9,8 +9,59 @@
   font-family: "Inter Tight", sans-serif;
 
   h2 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 400;
     font-size: 4rem;
+
+    span {
+      font-weight: 600;
+      visibility: hidden;
+      width: max-content;
+      border-radius: .5rem;
+      font-size: 1.25rem;
+      padding: 1.5rem 2rem;
+      position: absolute;
+      left: 102%;
+      bottom: 90%;
+      background-color: #141414;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        list-style: none;
+
+        li {
+          font-weight: 400;
+          color: #ddd;
+          text-transform: none;
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      background-color: #000;
+    }
+
+    i {
+      color: #fff;
+      vertical-align: center;
+      font-size: 2rem;
+    }
+
+    &:focus-within {
+      span {
+        visibility: visible;
+      }
+    }
   }
 
   p {
@@ -182,6 +233,15 @@
 
 @media (width < 800px) {
   .container {
+
+    h2 {
+      span {
+        left: 50%;
+        bottom: 100%;
+        padding: 1rem 2rem;
+      }
+    }
+
     form {
       .top-input {
         display: flex;
@@ -203,6 +263,12 @@
 
 @media (width < 500px) {
   .container {
+    h2 {
+      span {
+        left: 25%
+      }
+    }
+
     p {
       font-size: 1.5rem;
     }
