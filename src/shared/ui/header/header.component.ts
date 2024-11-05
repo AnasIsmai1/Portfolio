@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     this.isDarkTheme = document.documentElement.getAttribute('data-theme') == 'dark' ? true : false;
   }
 
-  isDarkTheme!: boolean;
+  isDarkTheme: boolean = true;
   isClicked: boolean = false;
   menuShow: boolean = false;
   logoShow: boolean = false;
