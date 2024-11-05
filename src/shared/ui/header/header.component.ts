@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Output, EventEmitter, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuServiceService } from '../../../services/menu-service/menu-service.service';
 
@@ -13,11 +13,13 @@ import { MenuServiceService } from '../../../services/menu-service/menu-service.
 
 export class HeaderComponent implements OnInit {
 
-  constructor(private menuService: MenuServiceService) {
+  constructor(private menuService: MenuServiceService, @Inject(PLATFORM_ID) private platformID: object) {
     this.menuService.booleanValue$.subscribe(value => this.isClicked = value);
   }
   ngOnInit(): void {
-    this.isDarkTheme = document.documentElement.getAttribute('data-theme') == 'dark' ? true : false;
+    if (isPlatformBrowser(this.platformID)) {
+      this.isDarkTheme = document.documentElement.getAttribute('data-theme') == 'dark' ? true : false;
+    }
   }
 
   isDarkTheme: boolean = true;
