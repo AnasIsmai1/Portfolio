@@ -1,6 +1,6 @@
 <div class="socials">
   @for(item of socials; track item; let i = $index) {
-  <a href="{{item.link}}" (mouseover)="onLinkHover(item.isHover, i)" (mouseleave)="onLinkLeave(item.isHover, i)"
+  <a href="{{item.link}}" (mouseover)="onLinkHover(true, i)" (mouseleave)="onLinkHover(false, i)"
     target="__blank">
     <span *ngIf="!item.isHover">{{item.title}}</span>
     <span *ngIf="item.isHover">{{item.alternateTitle}}</span>

@@ -27,7 +27,7 @@ export class SocialsComponent {
     {
       title: "linkedIn",
       alternateTitle: "l1nk3din",
-      link: "https://www.instagram.com/a_ismail.ai",
+      link: "https://www.linkedin.com/in/anas-ismail-9220b41b1/",
       isHover: false
     },
     {
@@ -39,14 +39,9 @@ export class SocialsComponent {
   ]
 
   onLinkHover(show: boolean, i: number) {
-    show = true;
-    this.socials[i].isHover = show;
+    if (screen.availWidth > 800) {
+      this.socials[i].isHover = show;
+    }
   }
-
-  onLinkLeave(show: boolean, i: number) {
-    show = false;
-    this.socials[i].isHover = show;
-  }
-
 
 }

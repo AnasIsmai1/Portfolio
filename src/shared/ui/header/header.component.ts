@@ -17,29 +17,14 @@ export class HeaderComponent {
     this.menuService.booleanValue$.subscribe(value => this.isClicked = value);
   }
 
-
   isClicked: boolean = false;
   menuShow: boolean = false;
   logoShow: boolean = false;
   @Output() menuClick = new EventEmitter();
 
-  onLogoHover() {
-    this.logoShow = true;
-  }
-
-  onLogoLeave() {
-    this.logoShow = false;
-  }
-
-  onMenuHover() {
+  onElementHover(property: 'menuShow' | 'logoShow', isHovering: boolean) {
     if (screen.availWidth > 800) {
-      this.menuShow = true;
-    }
-  }
-
-  onMenuLeave() {
-    if (screen.availWidth > 800) {
-      this.menuShow = false;
+      this[property] = isHovering;
     }
   }
 

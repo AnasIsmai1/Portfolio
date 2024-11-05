@@ -14,16 +14,12 @@ export class FooterComponent {
 
   topShow: boolean = false
 
-  onHover() {
-    this.topShow = true;
+  onHover(isHovering: boolean) {
+    if (screen.availWidth > 800) { this.topShow = isHovering; }
   }
 
   goToTop() {
     document.documentElement.scrollTo(0, 0);
-  }
-
-  onLeave() {
-    this.topShow = false;
   }
 
 }
