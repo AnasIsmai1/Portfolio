@@ -20,6 +20,11 @@ const routes: Routes = [
     path: 'about',
     title: 'About | Portfolio',
     loadChildren: () => import('../modules/about/about.module').then((m) => m.AboutModule)
+  },
+  {
+    path: "**",
+    title: 'Page Not Found',
+    loadChildren: () => import('../modules/not-found/not-found.module').then((m) => m.NotFoundModule),
   }
 ];
 

@@ -1,0 +1,61 @@
+.container {
+  overflow: hidden;
+  height: 100dvh;
+  text-align: center;
+  display: grid;
+  place-items: center;
+
+
+  h1 {
+    font-size: 40rem;
+    line-height: 30rem;
+    transform: translateY(-50%);
+  }
+}
+
+button {
+  border-radius: 5rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  position: absolute;
+  background-color: #ddd;
+  bottom: -5rem;
+  left: 50%;
+  padding: .75em 1.5em;
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: .3s ease;
+  animation: fadeIn .4s ease 1s forwards;
+
+  i {
+    font-size: 1.125rem;
+    border-radius: 100%;
+    padding: .75rem;
+    background-color: #000;
+    color: #eee;
+    transition: .2s ease;
+
+
+    &:hover {
+      rotate: 45deg;
+    }
+  }
+
+  &:hover {
+    font-weight: 500;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(#fff, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  80% {
+    bottom: 4.5rem;
+  }
+
+  100% {
+    bottom: 3rem;
+  }
+}

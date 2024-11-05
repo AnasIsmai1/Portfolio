@@ -20,7 +20,7 @@ import { ContactModule } from '../modules/contact/contact.module';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    ContactModule
+    ContactModule,
   ],
   providers: [
     provideClientHydration()

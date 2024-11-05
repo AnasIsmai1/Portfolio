@@ -1,0 +1,26 @@
+<section>
+  @for(work of works; track work; let i = $index) {
+  <div class="box">
+    <img decoding="async" fetchpriority="low" loading="lazy" [src]="work.img" alt="Showcase of {{ work.name }} Page">
+    <div class="links">
+      <a target="_blank" [href]="work.siteLink"><i class="fa-solid fa-link">
+          <div class="line"></div>
+        </i></a>
+      <a target="_blank" [href]="work.codeLink"><i class="fa-brands fa-github">
+          <div class="line"></div>
+        </i></a>
+    </div>
+    <div class="details">
+      <h4>Project Info: </h4>
+      <p>{{work.details}}</p>
+      <h4>Used Technologies</h4>
+      <div class="icons">
+        <i class="fa-brands js fa-square-js"></i>
+        <i class="fa-brands scss fa-sass"></i>
+        <i class="fa-brands css fa-css3-alt"></i>
+        <i class="fa-brands html fa-html5"></i>
+      </div>
+    </div>
+  </div>
+  }
+</section>
