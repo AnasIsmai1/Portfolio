@@ -6,12 +6,16 @@
       <h3 *ngIf="!logoShow">FUTURE</h3>
     </a>
   </div>
-  <nav (mouseover)="onElementHover('menuShow', true)" (mouseleave)="onElementHover('menuShow', false)" (click)="onClick()">
-    <div *ngIf="isClicked">
+  <nav (mouseover)="onElementHover('menuShow', true)" (mouseleave)="onElementHover('menuShow', false)" >
+    <div class="theme-icons" (click)="onThemeToggle()">
+      <a title="Switch theme to dark mode"><i class="fa-solid fa-sun" *ngIf="isDarkTheme"></i></a>
+      <a title="Switch theme to light mode"><i class="fa-solid fa-moon" *ngIf="!isDarkTheme"></i></a>
+    </div>
+    <div *ngIf="isClicked" (click)="onClick()">
       <a class="menu" *ngIf="menuShow" >M3nu</a>
       <a class="menu" *ngIf="!menuShow">Menu</a>
     </div>
-    <div *ngIf="!isClicked">
+    <div *ngIf="!isClicked" (click)="onClick()">
       [
       <a class="menu" *ngIf="menuShow">cl0s3</a>
       <a class="menu" *ngIf="!menuShow">close</a>

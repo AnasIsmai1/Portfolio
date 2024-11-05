@@ -9,7 +9,7 @@
     text-decoration: none;
     cursor: pointer;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--text-900);
 
     i {
       margin-left: .75rem;
@@ -25,7 +25,7 @@
       z-index: -2;
       width: 0%;
       height: 1px;
-      background-color: #ccc;
+      background-color: var(--text-900);
       transition: .4s ease;
     }
 

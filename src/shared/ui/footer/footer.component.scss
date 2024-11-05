@@ -9,7 +9,7 @@ footer {
     text-transform: uppercase;
 
     strong {
-      color: #fff;
+      color: var(--text-900);
     }
   }
 
@@ -23,7 +23,7 @@ footer {
       text-decoration: none;
       cursor: pointer;
       text-transform: uppercase;
-      color: #fff;
+      color: var(--text-900);
 
       i {
         margin-left: .75rem;
@@ -39,7 +39,7 @@ footer {
         z-index: -2;
         width: 0%;
         height: 1px;
-        background-color: #ccc;
+        background-color: var(--text-600);
         transition: .4s ease;
       }
 
@@ -59,13 +59,13 @@ footer {
   .top {
     position: relative;
     z-index: 10;
-    color: #fff;
+    color: var(--text-900);
     cursor: pointer;
     text-transform: uppercase;
 
     a {
       text-decoration: none;
-      color: #fff;
+      color: var(--text-900);
     }
 
     &::after {
@@ -78,7 +78,7 @@ footer {
       left: 0;
       width: 0%;
       height: 1px;
-      background-color: #fff;
+      background-color: var(--text-900);
       transition: 0.4s ease;
     }
 

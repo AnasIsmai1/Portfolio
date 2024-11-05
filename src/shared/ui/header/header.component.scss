@@ -7,13 +7,13 @@ header {
   background-color: transparent;
 
   a {
-    mix-blend-mode: difference;
+    mix-blend-mode: darken;
     text-decoration: none;
-    color: #fff;
+    color: var(--text-900);
   }
 
   .logo {
-    mix-blend-mode: difference;
+    mix-blend-mode: darken;
     position: relative;
     z-index: 1;
     display: flex;
@@ -21,12 +21,12 @@ header {
     gap: 0.75rem;
 
     span {
-      mix-blend-mode: difference;
+      mix-blend-mode: darken;
     }
 
     .star {
-      mix-blend-mode: difference;
-      color: #fff;
+      mix-blend-mode: darken;
+      color: var(--text-900);
       display: grid;
       place-items: center;
       place-content: center;
@@ -46,7 +46,7 @@ header {
     }
 
     h3 {
-      mix-blend-mode: difference;
+      mix-blend-mode: darken;
       position: relative;
       z-index: 5;
       cursor: pointer;
@@ -55,12 +55,12 @@ header {
     }
 
     .name {
-      mix-blend-mode: difference;
+      mix-blend-mode: darken;
       position: relative;
       z-index: 2;
 
       &::before {
-        mix-blend-mode: difference;
+        mix-blend-mode: darken;
         content: "";
         position: absolute;
         bottom: -15%;
@@ -68,13 +68,13 @@ header {
         width: 0%;
         height: 1px;
         transform: translateY(2%);
-        background-color: #ccc;
+        background-color: var(--text-900);
         transition: .5s ease;
       }
     }
 
     .name:hover {
-      mix-blend-mode: difference;
+      mix-blend-mode: darken;
       cursor: pointer;
 
       &::before {
@@ -85,14 +85,21 @@ header {
   }
 
   nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     position: relative;
+
+    i {
+      font-size: 1.25rem;
+    }
 
     div {
       font-size: 1.25rem;
     }
 
     .menu {
-      mix-blend-mode: difference;
+      mix-blend-mode: darken;
       display: inline;
       cursor: pointer;
       position: relative;
@@ -110,7 +117,7 @@ header {
         width: 0%;
         height: 1px;
         transform: translateY(2%);
-        background-color: #ccc;
+        background-color: var(--text-900);
         transition: .4s ease;
       }
 
@@ -120,7 +127,6 @@ header {
         }
       }
     }
-
 
   }
 
