@@ -94,6 +94,17 @@ header {
       cursor: pointer;
     }
 
+    .theme-icons a {
+      border-radius: 9rem;
+      padding: .45em;
+
+      &:hover,
+      &:focus-visible {
+        background-color: hsl(0 0 50% / 0.2);
+      }
+
+    }
+
     i {
       font-size: 1.25rem;
     }

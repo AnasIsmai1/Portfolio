@@ -48,4 +48,10 @@ export class HeaderComponent implements OnInit {
     console.log('clicked');
     this.menuClick.emit(this.isClicked);
   }
+
+  onClickHome() {
+    if (!this.isClicked) {
+      this.menuService.toggleBoolean();
+    }
+  }
 }

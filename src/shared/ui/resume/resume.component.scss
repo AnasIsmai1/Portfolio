@@ -38,7 +38,7 @@ section {
     }
 
     &:focus-visible {
-      outline: white 2px solid;
+      outline: var(--text-900) 2px solid;
       outline-offset: 3px;
     }
 

@@ -1,15 +1,15 @@
 <header class="container">
   <div class="logo">
     <span style="transform: translateY(2.5px)"><span class="star">✦</span></span>
-    <a routerLink="/" class="name" (mouseover)="onElementHover('logoShow', true)" (mouseleave)="onElementHover('logoShow', false)">
+    <a routerLink="/" class="name" (mouseover)="onElementHover('logoShow', true)" (mouseleave)="onElementHover('logoShow', false)" (click)="onClickHome()">
       <h3 *ngIf="logoShow">FU7UR3</h3>
       <h3 *ngIf="!logoShow">FUTURE</h3>
     </a>
   </div>
   <nav (mouseover)="onElementHover('menuShow', true)" (mouseleave)="onElementHover('menuShow', false)" >
     <div class="theme-icons" (click)="onThemeToggle()">
-      <a title="Switch theme to dark mode"><i class="fa-solid fa-sun" *ngIf="isDarkTheme"></i></a>
-      <a title="Switch theme to light mode"><i class="fa-solid fa-moon" *ngIf="!isDarkTheme"></i></a>
+      <a title="Switch theme to dark mode" *ngIf="isDarkTheme"><i class="fa-solid fa-sun"></i></a>
+      <a title="Switch theme to light mode" *ngIf="!isDarkTheme"><i class="fa-solid fa-moon"></i></a>
     </div>
     <div *ngIf="isClicked" (click)="onClick()">
       <a class="menu" *ngIf="menuShow" >M3nu</a>

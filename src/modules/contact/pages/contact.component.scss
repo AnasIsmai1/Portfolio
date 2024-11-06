@@ -171,6 +171,11 @@
       color: var(--bg-100);
       font-weight: 500;
       padding: 1.5rem;
+
+      &:focus-visible {
+        outline: var(--text-900) 2px solid;
+        outline-offset: 3px;
+      }
     }
   }
 

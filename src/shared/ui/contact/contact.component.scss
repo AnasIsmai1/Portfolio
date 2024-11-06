@@ -31,6 +31,11 @@
     padding: 1rem 2rem;
     border-radius: 5rem;
 
+    &:focus-visible {
+      outline: white 2px solid;
+      outline-offset: 3px;
+    }
+
     p {
       color: var(--bg-100);
       position: relative;
