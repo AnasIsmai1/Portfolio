@@ -90,6 +90,10 @@ header {
     align-items: center;
     position: relative;
 
+    a {
+      cursor: pointer;
+    }
+
     i {
       font-size: 1.25rem;
     }
