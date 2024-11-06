@@ -33,9 +33,11 @@ export class HeaderComponent implements OnInit {
     if (document.documentElement.getAttribute('data-theme') == 'dark') {
       document.documentElement.setAttribute('data-theme', 'light')
       localStorage.setItem('isDarkTheme', 'false');
+      this.isDarkTheme = false;
     } else {
       document.documentElement.setAttribute('data-theme', 'dark')
       localStorage.setItem('isDarkTheme', 'true');
+      this.isDarkTheme = true;
     }
   }
 
