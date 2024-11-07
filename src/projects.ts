@@ -5,6 +5,7 @@ export interface PROJECT {
   details: string,
   img: string,
   technologies: string[],
+  isLoading: boolean,
 }
 export const Projects: PROJECT[] = [
   {
@@ -13,7 +14,8 @@ export const Projects: PROJECT[] = [
     codeLink: "https://github.com/AnasIsmai1/Glint",
     details: "This project demonstrates API integration skills by using the Jikan API to fetch data from MyAnimeList. The webpage, built with HTML, CSS, and JavaScript, dynamically renders content cards, which are added to the DOM via document fragments for improved performance.",
     img: "./Glint.png",
-    technologies: ["scss", "html", "js", "css"]
+    technologies: ["scss", "html", "js", "css"],
+    isLoading: true,
   },
   {
     name: 'Anime Data List',
@@ -21,14 +23,17 @@ export const Projects: PROJECT[] = [
     codeLink: "https://github.com/AnasIsmai1/popular-anime-data",
     details: "This project demonstrates API integration skills by using the Jikan API to fetch data from MyAnimeList. The webpage, built with HTML, CSS, and JavaScript, dynamically renders content cards, which are added to the DOM via document fragments for improved performance.",
     img: "./Anime.png",
-    technologies: ["scss", "html", "js", "css"]
+    technologies: ["scss", "html", "js", "css"],
+    isLoading: true,
   }, {
     name: 'Shades Landing Page',
     siteLink: "https://anas-sdeprj-shades-landing-page.netlify.app/",
     codeLink: "https://github.com/AnasIsmai1/Websites/tree/main/Shades-Landing-Page",
     details: "This project is a news landing page. This was made using Angular, I made use of components to create the articles at the bottom and dynamically render them in.",
     img: "./Shades.png",
-    technologies: ["html", "js", "css"]
+    technologies: ["html", "js", "css"],
+    isLoading: true,
+
   },
   {
     name: 'News Homepage',
@@ -36,6 +41,7 @@ export const Projects: PROJECT[] = [
     codeLink: "https://github.com/AnasIsmai1/News-Homepage-Main",
     details: "This project is a news landing page. This was made using Angular, I made use of components to create the articles at the bottom and dynamically render them in.",
     img: "./News.png",
-    technologies: ["angular", "scss", "html", "js", "css"]
+    technologies: ["angular", "scss", "html", "js", "css"],
+    isLoading: true,
   }
 ]

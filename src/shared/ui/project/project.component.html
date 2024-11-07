@@ -1,7 +1,7 @@
 <section>
-  @for(work of works; track work; let i = $index) {
+  @for(work of works; track work; let ind = $index) {
   <div class="box">
-    <img decoding="async" fetchpriority="low" loading="lazy" [src]="work.img" alt="Showcase of {{ work.name }} Page">
+    <img [ngClass]="{ 'loading': !work.isLoading }" decoding="async" fetchpriority="low" loading="lazy" [src]="work.img" alt="Showcase of {{ work.name }} Page" (load)="onLoad(ind)">
     <div class="links">
       <a target="_blank" [href]="work.siteLink"><i class="fa-solid fa-link">
           <div class="line"></div>

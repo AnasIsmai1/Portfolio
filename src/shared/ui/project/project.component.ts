@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { PROJECT, Projects } from '../../../projects';
 import { CommonModule } from '@angular/common';
 
@@ -12,6 +12,14 @@ import { CommonModule } from '@angular/common';
 
 export class ProjectComponent {
 
+  constructor(private cdr: ChangeDetectorRef) { }
+
   works: PROJECT[] = Projects;
+
+  onLoad(index: number) {
+
+    this.works[index].isLoading = false;
+    this.cdr.detectChanges();
+  }
 
 }
