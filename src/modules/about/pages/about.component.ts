@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { IMG, img } from '../../../about';
 
 @Component({
   selector: 'app-about',
@@ -17,6 +18,12 @@ export class AboutComponent implements AfterViewInit {
   private observer!: IntersectionObserver;
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) { }
+
+  imgs: IMG[] = img;
+
+  onLoad(index: number) {
+    this.imgs[index].isLoading = true;
+  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId) && 'IntersectionObserver' in window) {

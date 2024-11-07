@@ -13,16 +13,12 @@
   </section>
 </div>
 <section class="scroll">
-  <img loading="lazy" style="--pos: 1" src="./pc.jpeg" alt="pc with green aesthetic">
-  <img loading="lazy" style="--pos: 2" src="./controller.jpeg" alt="ps4 controller blue aesthetic">
-  <img loading="lazy" style="--pos: 3" src="./random.jpeg" alt="room with orange aesthetic">
-  <img loading="lazy" style="--pos: 4" src="./flash.jpeg" alt="lightning neon sign with blue aesthetic">
-  <img loading="lazy" style="--pos: 5" src="./Nissan.jpeg" alt="nissan r32 wiht black aesthetic">
-  <img loading="lazy" style="--pos: 6" src="./pc.jpeg" alt="pc with green aesthetic">
-  <img loading="lazy" style="--pos: 7" src="./controller.jpeg" alt="ps4 controller blue aesthetic">
-  <img loading="lazy" style="--pos: 8" src="./random.jpeg" alt="room with orange aesthetic">
-  <img loading="lazy" style="--pos: 9" src="./flash.jpeg" alt="lightning neon sign with blue aesthetic">
-  <img loading="lazy" style="--pos: 10" src="./Nissan.jpeg" alt="nissan r32 wiht black aesthetic">
+
+  @for(img of imgs; track $index; let i = $index) {
+  <img [style]="{ '--pos': $index + 1}" [src]="img.path" [alt]="img.alt" [ngClass]="{ 'loaded': img.isLoading}"
+    (load)="onLoad(i)">
+  }
+
 </section>
 <div class="container">
   <section class="services">

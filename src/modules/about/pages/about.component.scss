@@ -3,6 +3,7 @@
   padding-block: 10rem;
   text-align: center;
 
+
   h1 {
     width: fit-content;
     margin: auto;
@@ -133,7 +134,12 @@ h2 {
   display: block;
   text-align: center;
 
+  .loaded {
+    opacity: 1 !important;
+  }
+
   img {
+    opacity: 0;
     position: absolute;
     z-index: 2;
     top: 0%;
