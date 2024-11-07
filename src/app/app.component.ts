@@ -25,9 +25,7 @@ export class AppComponent implements OnInit {
         this.loading = true;
         console.log("Navigation Started");
       } else if (event instanceof NavigationCancel || event instanceof NavigationEnd) {
-        setTimeout(() => {
-          this.loading = false;
-        }, 2000);
+        this.loading = false;
         console.log("Navigation Ended or Cancelled");
         console.log(this.loading);
       }
