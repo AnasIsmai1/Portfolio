@@ -147,6 +147,7 @@ h2 {
     object-fit: cover;
     width: 250px;
     aspect-ratio: 1;
+    transition: opacity 0.3s ease;
     animation: slideLeft 40s calc((40 / 10) * (10 - var(--pos)) * -1s) linear infinite;
 
     &::before {
