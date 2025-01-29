@@ -15,10 +15,9 @@
       <p>{{work.details}}</p>
       <h4>Used Technologies</h4>
       <div class="icons">
-        <i class="fa-brands js fa-square-js"></i>
-        <i class="fa-brands scss fa-sass"></i>
-        <i class="fa-brands css fa-css3-alt"></i>
-        <i class="fa-brands html fa-html5"></i>
+          @for(stack of work.technologies; track stack; let i = $index) {
+            <i class="fa-brands {{stack}}"></i>
+          }
       </div>
     </div>
   </div>
