@@ -15,7 +15,6 @@ section {
   z-index: 2;
   overflow: hidden;
   border-radius: 2rem;
-  aspect-ratio: 1;
   background-color: #111;
 
   &::before {
@@ -89,37 +88,6 @@ section {
     }
   }
 
-  .links {
-    position: absolute;
-    z-index: 5;
-    top: -5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all .5s ease;
-
-    i {
-      position: relative;
-      padding: 0.5rem;
-      border: solid 1px white;
-      border-radius: 5rem;
-      font-size: 1.75rem;
-      color: #fff;
-      margin-inline: 1rem;
-
-      .line {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: 50%;
-        height: 100%;
-        width: 2px;
-        background-color: #fff;
-      }
-    }
-
-
-  }
-
   img {
     opacity: 0;
     text-align: center;
@@ -177,6 +145,23 @@ section {
   }
 }
 
+.links-a-la-carte {
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+
+  i {
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 5rem;
+    background-color: var(--input-bg);
+    position: relative;
+    font-size: 1.25rem;
+    color: #fff;
+  }
+}
+
 @media (width < 800px) {
   section {
     padding-top: 8rem;
@@ -206,5 +191,47 @@ section {
         font-size: 1rem;
       }
     }
+  }
+}
+
+
+.project {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-btn {
+  background: transparent;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 5rem;
+  background-color: var(--input-bg);
+  font-size: 1.25rem;
+  color: white;
+}
+
+@keyframes showup {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.icons {
+  display: flex;
+  gap: 0.5em;
+
+  iconify-icon {
+    opacity: 0;
+    animation: showup .75s ease 0s forwards;
+    animation-delay: calc(var(--position) * 0.15 * 1s);
+    font-size: 1.25rem;
   }
 }
