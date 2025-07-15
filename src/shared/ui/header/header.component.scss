@@ -1,5 +1,22 @@
 $hue: 0% 0% 50%;
 
+@keyframes fade-in {
+  from {
+    translate: 0 -100%;
+  }
+
+  to {
+    translate: 0  0%;
+  }
+}
+
+@media (width > 1024px) {
+  header.home {
+      translate: 0 -100%;
+      animation: fade-in ease 1s 4.5s forwards;
+  }
+}
+
 header {
   height: 10vh;
   padding-block: 2rem;

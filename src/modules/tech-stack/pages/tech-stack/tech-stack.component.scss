@@ -89,14 +89,14 @@
       transform: rotate(45deg);
       transition: .3s ease;
 
-      i {
+      iconify-icon {
         color: #000;
         font-size: 1.125rem;
         font-weight: 600;
       }
     }
 
-    i {
+    iconify-icon {
       position: relative;
       z-index: 8;
       align-self: center;

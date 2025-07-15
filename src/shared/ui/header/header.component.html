@@ -1,4 +1,4 @@
-<header class="container">
+<header class="container" [ngClass]="{'home': isHome }">
   <div class="logo">
     <span style="transform: translateY(2.5px)"><span class="star">✦</span></span>
     <a routerLink="/" class="name" (mouseover)="onElementHover('logoShow', true)" (mouseleave)="onElementHover('logoShow', false)" (click)="onClickHome()">
@@ -23,5 +23,3 @@
     </div>
   </nav>
 </header>
-
-

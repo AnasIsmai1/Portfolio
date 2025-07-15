@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  isHome: boolean = window.location.pathname === '/' || false
+
   isDarkTheme: boolean = true;
   isClicked: boolean = false;
   menuShow: boolean = false;
