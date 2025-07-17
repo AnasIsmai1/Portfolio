@@ -19,11 +19,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformID)) {
       this.isDarkTheme = document.documentElement.getAttribute('data-theme') == 'dark' ? true : false;
+      this.isHome = window.location.pathname === '/' || false
     }
   }
 
-  isHome: boolean = window.location.pathname === '/' || false
 
+  isHome: boolean = false;
   isDarkTheme: boolean = true;
   isClicked: boolean = false;
   menuShow: boolean = false;
